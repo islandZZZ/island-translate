@@ -1,0 +1,21 @@
+{
+  "name": "island-translate",
+  "version": "1.0.0",
+  "description": "a tool for translation",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/islandZZZ/island-translate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/islandZZZ/island-translate/issues"
+  },
+  "homepage": "https://github.com/islandZZZ/island-translate#readme"
+}
