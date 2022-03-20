@@ -9,8 +9,9 @@ const program = new Command();
 program
     .name('fy')
     .description('a tool for translation')
-    .arguments('[word]', 'word to input')
-    .action(async (q) => {
+    .arguments('[word...]', 'word to input')
+    .action(async (words) => {
+        const q = words.join(' ')
         if (q === undefined || !String(q).trim().length) {
             console.log('tips: words cannot be empty.'.red)
             return
