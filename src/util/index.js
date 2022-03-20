@@ -66,7 +66,7 @@ export const writeConfig = (config, path = defaultConfigPath) => {
     })
 }
 
-export const setConfig = async (payload, dir = defaultConfigPath) => {
+export const setConfig = async payload => {
     const config = await readConfig()
     for (const [k, has] of Object.entries(payload.options)) {
         has && (config[k] = payload[k])
@@ -92,3 +92,16 @@ export const logger = (data) => {
     console.log(`[DONE] ${getTime()}\n查询: ${src}\n返回: ${dst}  `.green); // outputs green text
 }
 
+export const getAuth = (filePath = defaultConfigPath) => {
+    return new Promise((resolve, reject) => {
+        exec(`chmod +x ${filePath}`, (error, stdout, stderr) => {
+            if (error) {
+                console.log(error)
+                reject(error)
+                return
+            }
+            resolve(logger(`${filePath} 执行权限开启成功!`))
+        })
+    })
+
+}

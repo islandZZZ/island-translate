@@ -1,9 +1,15 @@
 {
   "name": "island-translate",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "a tool for translation",
   "main": "index.js",
   "type": "module",
+  "bin": {
+    "fy": "cli.js"
+  },
+  "files": [
+    "*.js"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
