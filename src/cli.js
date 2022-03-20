@@ -10,11 +10,17 @@ program
     .description('a tool for translation')
     .arguments('[word]', 'word to input')
     .action(async (q) => {
+        if (q === undefined || !String(q).trim().length) {
+            console.log('tips: words cannot be empty.'.red)
+            return
+        }
+
         const { appid, key } = await readConfig()
         if (!appid || !key) {
             console.log('tips: can not find appid or key, please check your config.json at first.'.red)
             return
         }
+        
         const data = await getRes(q, appid, key)
         logger(data)
     })
