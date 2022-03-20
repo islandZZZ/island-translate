@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 import { Command } from 'commander'
 import { getRes } from './src/api.js';
 import { readConfig, setConfig, logger } from './src/util/index.js';
