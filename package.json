@@ -1,13 +1,14 @@
 {
   "name": "island-translate",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "a tool for translation",
-  "main": "index.js",
+  "main": "cli.js",
   "type": "module",
   "bin": {
     "fy": "cli.js"
   },
   "files": [
+    "./src",
     "*.js"
   ],
   "scripts": {
