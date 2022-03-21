@@ -87,9 +87,9 @@ export const getTime = () => {
     return `${year}-${f(month)}-${f(day)} ${f(hour)}:${f(minute)}:${f(second)}`
 }
 
-export const logger = (data) => {
+export const logger = (data,time) => {
     const { src, dst } = data[0]
-    console.log(`[DONE] ${getTime()}\n查询: ${src}\n返回: ${dst}  `.green); // outputs green text
+    console.log(`[DONE] ${getTime()} 耗时${time}ms\n查询: ${src}\n返回: ${dst}\n  `.green); // outputs green text
 }
 
 export const getAuth = (filePath = defaultConfigPath) => {

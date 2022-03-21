@@ -11,6 +11,7 @@ program
     .description('a tool for translation')
     .arguments('[word...]', 'word to input')
     .action(async (words) => {
+        const startTime = new Date().getTime()
         const q = words.join(' ')
         if (q === undefined || !String(q).trim().length) {
             console.log('tips: words cannot be empty.'.red)
@@ -22,11 +23,10 @@ program
             console.log('tips: can not find appid or key, please check your config.json at first.'.red)
             return
         }
-        
         const data = await getRes(q, appid, key)
-        logger(data)
+        const endTime = new Date().getTime()
+        logger(data, endTime - startTime)
     })
-    .version('0.0.1');
 
 program.command('show')
     .description('show your config info')
