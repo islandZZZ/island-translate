@@ -3,8 +3,9 @@ import crypto from 'crypto'
 import path from 'path'
 import fs from 'fs'
 import 'colors'
-
-const defaultConfigPath = path.join(process.cwd(), './config.json')
+import { homedir } from 'os'
+const home = process.env.HOME || homedir
+const defaultConfigPath = path.join(home, 'island-translate.config.json')
 
 // the translation between Chinese and English is supported
 export const languageTypeMap = {
@@ -87,7 +88,7 @@ export const getTime = () => {
     return `${year}-${f(month)}-${f(day)} ${f(hour)}:${f(minute)}:${f(second)}`
 }
 
-export const logger = (data,time) => {
+export const logger = (data, time) => {
     const { src, dst } = data[0]
     console.log(`[DONE] ${getTime()} 耗时${time}ms\n查询: ${src}\n返回: ${dst}\n  `.green); // outputs green text
 }
