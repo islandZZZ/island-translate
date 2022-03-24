@@ -3,8 +3,8 @@ import crypto from 'crypto'
 import path from 'path'
 import fs from 'fs'
 import 'colors'
-import { homedir } from 'os'
-const home = process.env.HOME || homedir
+import { homedir } from 'os' //系统的home目录 home dir
+const home = process.env.HOME || homedir // 系统配置的home环境变量 home variable
 const defaultConfigPath = path.join(home, 'island-translate.config.json')
 
 // the translation between Chinese and English is supported
