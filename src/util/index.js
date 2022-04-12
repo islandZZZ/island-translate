@@ -10,7 +10,8 @@ const defaultConfigPath = path.join(home, 'island-translate.config.json')
 // the translation between Chinese and English is supported
 export const languageTypeMap = {
     zh: 'zh',
-    en: 'en'
+    en: 'en',
+    jp:'jp'
 }
 
 export const getLanguageType = str => {
