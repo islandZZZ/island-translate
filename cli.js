@@ -11,6 +11,7 @@ program
     .description('a tool for translation')
     .arguments('[word...]', 'word to input')
     .option('-j,--j', 'Support Japanese to Chinese Translation')
+    .option('-main,--main', 'Support English to main language Translation')
     .action(async (words,options) => {
         const startTime = new Date().getTime()
         const q = words.join(' ')
@@ -24,7 +25,8 @@ program
             console.log('tips: can not find appid or key, please check your config.json at first.'.red)
             return
         }
-        const data = await getRes(q, appid, key, options.j)
+        
+        const data = await getRes(q, appid, key, options.j, options.main)
         const endTime = new Date().getTime()
         logger(data, endTime - startTime)
     })

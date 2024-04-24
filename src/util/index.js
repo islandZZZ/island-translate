@@ -11,7 +11,7 @@ const defaultConfigPath = path.join(home, 'island-translate.config.json')
 export const languageTypeMap = {
     zh: 'zh',
     en: 'en',
-    jp:'jp'
+    jp:'jp',
 }
 
 export const getLanguageType = str => {
